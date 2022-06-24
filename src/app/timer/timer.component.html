@@ -1,0 +1,17 @@
+<section class="timer-section">
+  <h2>Timer</h2>
+  <div class="tiles" #tiles>
+    <div class="tile d-flex justify-content-center align-items-center w-100">
+      <app-show-timer [timerValue]="timerValue"></app-show-timer>
+    </div>
+    <div class="tile d-flex justify-content-center align-items-center w-100">
+      <app-get-timer (emitTimer)="fromShowTimer($event)" (resetTimerObj)="resetTimer($event)"></app-get-timer>
+    </div>
+    <div class="tile d-flex justify-content-center align-items-center w-100">
+      <app-log-time [timerValue]="timerValue"></app-log-time>
+    </div>
+    <div class="tile d-flex justify-content-center align-items-center w-100">
+      <app-click-counts [timerValue]="timerValue"></app-click-counts>
+    </div>
+  </div>
+</section>

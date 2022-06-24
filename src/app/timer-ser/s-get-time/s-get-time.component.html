@@ -1,0 +1,32 @@
+
+<section class="timer-section">
+  <h2>Timer</h2>
+  <div class="tiles" #tiles>
+    <div class="tile d-flex justify-content-center align-items-center w-100">
+      <app-show-countdown></app-show-countdown>
+    </div>
+    <div class="tile d-flex justify-content-center align-items-center w-100">
+      <div class="form-row">
+        <label for="getTimer">Enter timer limit</label>
+        <input type="text" name="getTimer" id="getTimer" ngModel #getTimer>
+      </div>
+      <div class="form-row">
+        <button class="btn btn-primary" (click)="shareData()">Start/Pause</button>
+        <button class="btn btn-danger" (click)="resetTimer()">Reset</button>
+      </div>
+      <div class="row">
+        <div class="col-md-12" *ngFor="let log of pauseLogArray;">
+          Paused at {{log}}
+        </div>
+      </div>
+    </div>
+
+    <div class="tile d-flex justify-content-center align-items-center w-100">
+      <app-s-log></app-s-log>
+    </div>
+    <div class="tile d-flex justify-content-center align-items-center w-100">
+      <app-s-click-counts></app-s-click-counts>
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,66 @@
+[
+    {
+      "id": 1,
+      "name":"Product Sample",
+      "description": "Product Sample",
+      "imgSrc": "Krish",
+      "soldNumbers": "54,000",
+      "launchDate": "2 weeks ago"
+    },
+    {
+      "id": 2,
+      "name":"Product Sample",
+      "description": "Product Test",
+      "imgSrc": "Krish",
+      "soldNumbers": "1,000",
+      "launchDate": "1 week ago"
+    },
+    {
+      "id": 3,
+      "name":"Product Sample",
+      "description": "Product Sample",
+      "imgSrc": "Krish",
+      "soldNumbers": "54,000",
+      "launchDate": "2 weeks ago"
+    },
+    {
+      "id": 4,
+      "name":"Product Sample",
+      "description": "Product Test",
+      "imgSrc": "Krish",
+      "soldNumbers": "1,000",
+      "launchDate": "1 week ago"
+    },
+    {
+      "id": 5,
+      "name":"Product Sample",
+      "description": "Product Sample",
+      "imgSrc": "Krish",
+      "soldNumbers": "54,000",
+      "launchDate": "2 weeks ago"
+    },
+    {
+      "id": 6,
+      "name":"Product Sample",
+      "description": "Product Test",
+      "imgSrc": "Krish",
+      "soldNumbers": "1,000",
+      "launchDate": "1 week ago"
+    },
+    {
+      "id": 7,
+      "name":"Product Sample",
+      "description": "Product Sample",
+      "imgSrc": "Krish",
+      "soldNumbers": "54,000",
+      "launchDate": "2 weeks ago"
+    },
+    {
+      "id": 8,
+      "name":"Product Sample",
+      "description": "Product Test",
+      "imgSrc": "Krish",
+      "soldNumbers": "1,000",
+      "launchDate": "1 week ago"
+    }
+  ]

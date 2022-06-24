@@ -1,0 +1,13 @@
+<div class="form-row">
+  <label for="getTimer">Enter timer limit</label>
+  <input type="text" name="getTimer" id="getTimer" ngModel #getTimer>
+</div>
+<div class="form-row">
+  <button class="btn btn-primary" (click)="sendToParent()">Start/Pause</button>
+  <button class="btn btn-danger" (click)="resetTimer()">Reset</button>
+</div>
+<div class="row">
+  <div class="col-md-12" *ngFor="let log of pauseLogArray;">
+    Paused at {{log}}
+  </div>
+</div>

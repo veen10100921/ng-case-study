@@ -1,0 +1,9 @@
+th{
+  cursor: pointer;
+}
+th:hover{
+  color: var(--body-color);
+}
+.tiles {
+  grid-template-columns: repeat(1, 1fr);
+}
