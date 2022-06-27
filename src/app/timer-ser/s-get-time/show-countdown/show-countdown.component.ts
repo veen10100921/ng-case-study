@@ -22,7 +22,6 @@ export class ShowCountdownComponent {
   constructor(private http: HttpService, private cd: ChangeDetectorRef) {
     this.subscription = this.http.getCountDown().subscribe((res) => {
       if (res <= 0) {
-        console.log('Res: ', res);
         this.timerValue = 0;
         return;
       }

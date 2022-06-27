@@ -5,7 +5,7 @@ import { Component, ElementRef, Input, OnChanges, OnInit, Renderer2, SimpleChang
   templateUrl: './log-time.component.html',
   styleUrls: ['./log-time.component.scss'],
 })
-export class LogTimeComponent implements OnInit, OnChanges {
+export class LogTimeComponent implements OnChanges {
   @Input()
   timerValue!: {
     timer: number;
@@ -19,6 +19,11 @@ export class LogTimeComponent implements OnInit, OnChanges {
   showLogs!: ElementRef;
   constructor(private renderer:Renderer2) {}
 
+  /**
+   * Logs timer data
+   * @param changes
+   * @returns on changes
+   */
   ngOnChanges(changes: SimpleChanges): void {
     console.log("Log component: ", this.timerValue);
     if(this.timerValue.actionType == ""){
@@ -31,8 +36,6 @@ export class LogTimeComponent implements OnInit, OnChanges {
     this.renderer.appendChild(div, divText);
     this.renderer.appendChild(this.showLogs.nativeElement, div)
   }
-
-  ngOnInit(): void {}
 
 
 }

@@ -19,6 +19,7 @@ export class SLogComponent implements OnDestroy {
         if (this.timerValue.actionType == '') {
           return;
         }
+        // Create dynamic content to log message
         const logText = `${this.timerValue.actionType} at ${this.timerValue.date} ${this.timerValue.time}`;
         let div = this.renderer.createElement('div');
         this.renderer.addClass(div, 'col-md-12');

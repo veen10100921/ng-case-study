@@ -31,6 +31,9 @@ export class DynamicContentComponent implements OnInit {
     );
   }
 
+  /**
+   * Detect height of the container while scrolling for appending new div
+   */
   public onscroll = (ev: Event) => {
     const windowInnerHeight = this.myTile.nativeElement.getBoundingClientRect().height;
     const bodyHeight = document.body.offsetHeight;
@@ -39,10 +42,11 @@ export class DynamicContentComponent implements OnInit {
     }
   };
 
+  /**
+   * Shows div id in alert
+   * @param id
+   */
   public showDivId(id: number): void {
     alert('Div Id is: ' + id);
   }
-}
-function ev(ev: any, arg1: {}) {
-  throw new Error('Function not implemented.');
 }

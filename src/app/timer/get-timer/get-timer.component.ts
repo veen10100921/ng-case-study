@@ -16,7 +16,7 @@ import { interval, take, map, Subscription } from 'rxjs';
   templateUrl: './get-timer.component.html',
   styleUrls: ['./get-timer.component.scss'],
 })
-export class GetTimerComponent implements OnInit, OnChanges {
+export class GetTimerComponent {
   @Output() emitTimer = new EventEmitter<any>();
   @Output() resetTimerObj = new EventEmitter<any>();
   @Input() updatedTime: any;
@@ -48,20 +48,18 @@ export class GetTimerComponent implements OnInit, OnChanges {
   pauseLogArray: any[] = [];
   constructor() {}
 
-  ngOnChanges(changes: SimpleChanges): void {
-    // console.log("Updated time is: ", this.pausedValue);
-  }
-
-  ngOnInit(): void {
-    // console.log("Updated time is: ", this.updatedTime);
-  }
-
+  /**
+   * Sends data to parent
+   */
   sendToParent() {
     this.countdownTimerObj();
     this.startCoundown();
     this.emitTimer.emit(this.getTimerObj);
   }
 
+  /**
+   * Resets timer
+   */
   resetTimer() {
     this.unsubscribeObs();
     this.count = 0;
@@ -79,6 +77,9 @@ export class GetTimerComponent implements OnInit, OnChanges {
     this.getTimerObj = Object.assign({}, this.getTimerObj);
     this.resetTimerObj.emit(this.getTimerObj);
   }
+  /**
+   * Countdowns timer obj
+   */
   countdownTimerObj() {
     this.formatDateTime();
     this.count++;
@@ -100,6 +101,9 @@ export class GetTimerComponent implements OnInit, OnChanges {
     this.getTimerObj = Object.assign({}, this.getTimerObj);
   }
 
+  /**
+   * Formats date time
+   */
   formatDateTime() {
     // Format date
     const date_format = (date: Date) => date.toISOString().slice(0, 10);
@@ -109,6 +113,10 @@ export class GetTimerComponent implements OnInit, OnChanges {
     this.time = time_format.toLocaleTimeString();
   }
 
+  /**
+   * Starts coundown
+   * @returns
+   */
   startCoundown() {
     if (this.getTimerObj.actionType.toLowerCase() === 'pause') {
       this.getTimer = this.getTimerObj.timer;
@@ -136,6 +144,9 @@ export class GetTimerComponent implements OnInit, OnChanges {
         this.getTimerObj.timer = this.getTimer;
       });
   }
+  /**
+   * Unsubscribes obs
+   */
   unsubscribeObs() {
     this.countDownSubscriber.unsubscribe();
   }

@@ -39,12 +39,18 @@ export class SGetTimeComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  /**
+   * Shares data to service
+   */
   shareData() {
     this.countdownTimerObj();
     this.startCoundown();
     this.http.shareData(this.getTimerObj);
   }
 
+  /**
+   * Resets timer
+   */
   resetTimer() {
     this.unsubscribeObs();
     this.count = 0;
@@ -63,6 +69,9 @@ export class SGetTimeComponent implements OnInit {
     this.http.countDownDataFn(this.getTimerObj.timer);
   }
 
+  /**
+   * Countdowns timer obj
+   */
   countdownTimerObj() {
     this.formatDateTime();
     this.count++;
@@ -82,6 +91,10 @@ export class SGetTimeComponent implements OnInit {
     }
   }
 
+  /**
+   * Starts coundown
+   * @returns
+   */
   startCoundown() {
     if (this.getTimerObj.actionType.toLowerCase() === 'pause') {
       this.getTimer = this.getTimerObj.timer;
@@ -109,6 +122,9 @@ export class SGetTimeComponent implements OnInit {
       });
   }
 
+  /**
+   * Formats date time
+   */
   formatDateTime() {
     // Format date
     const date_format = (date: Date) => date.toISOString().slice(0, 10);
@@ -118,6 +134,9 @@ export class SGetTimeComponent implements OnInit {
     this.time = time_format.toLocaleTimeString();
   }
 
+  /**
+   * Unsubscribes obs
+   */
   unsubscribeObs() {
     this.countDownSubscriber.unsubscribe();
   }

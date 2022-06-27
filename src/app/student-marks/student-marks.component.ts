@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { StudentModel } from './student-model';
 
 @Component({
   selector: 'app-student-marks',
@@ -47,6 +46,9 @@ export class StudentMarksComponent implements OnInit {
       return key !== 'id';
     });
   }
+  /**
+   * Sorts table data from a-b, b-a, and then to original data
+   */
   sortTable(): void {
     this.count++;
     switch (this.count) {

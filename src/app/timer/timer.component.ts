@@ -30,12 +30,18 @@ export class TimerComponent implements OnInit, OnChanges {
 
   }
 
+  /**
+   * Gets data from show timer
+   * @param timer
+   */
   fromShowTimer(timer: any) {
     this.timerValue = timer;
-    console.log(this.timerValue);
   }
+  /**
+   * Resets timer
+   * @param timer
+   */
   resetTimer(timer: any) {
     this.timerValue = timer;
-    console.log(this.timerValue);
   }
 }

@@ -5,7 +5,7 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
   templateUrl: './click-counts.component.html',
   styleUrls: ['./click-counts.component.scss']
 })
-export class ClickCountsComponent implements OnInit, OnChanges {
+export class ClickCountsComponent {
   @Input()
   timerValue!: {
     timer: number;
@@ -16,11 +16,5 @@ export class ClickCountsComponent implements OnInit, OnChanges {
     pauseCount: number;
   };
   constructor() { }
-  ngOnChanges(changes: SimpleChanges): void {
-    // throw new Error('Method not implemented.');
-  }
-
-  ngOnInit(): void {
-  }
 
 }

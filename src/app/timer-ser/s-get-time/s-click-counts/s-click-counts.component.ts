@@ -6,7 +6,7 @@ import { HttpService } from 'src/app/services/http.service';
   templateUrl: './s-click-counts.component.html',
   styleUrls: ['./s-click-counts.component.scss']
 })
-export class SClickCountsComponent implements OnInit {
+export class SClickCountsComponent {
   startCount: number = 0;
   pauseCount: number = 0;
   constructor( private http: HttpService) {
@@ -16,9 +16,6 @@ export class SClickCountsComponent implements OnInit {
         this.pauseCount = res.pauseCount;
       }
     })
-  }
-
-  ngOnInit(): void {
   }
 
 }

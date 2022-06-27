@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { FloatingBannerComponent } from './floating-banner/floating-banner.component';
 import { EcomCatComponent } from './ecom-cat/ecom-cat.component';
 import { DynamicContentComponent } from './dynamic-content/dynamic-content.component';
-import { SortingPipePipe } from './sorting-pipe.pipe';
 import { TimerModule } from './timer/timer.module';
 import { StudentMarksComponent } from './student-marks/student-marks.component';
 
@@ -17,8 +16,7 @@ import { StudentMarksComponent } from './student-marks/student-marks.component';
     FloatingBannerComponent,
     EcomCatComponent,
     DynamicContentComponent,
-    StudentMarksComponent,
-    SortingPipePipe
+    StudentMarksComponent
   ],
   imports: [
     BrowserModule,

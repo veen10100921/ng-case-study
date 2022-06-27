@@ -1,6 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { HttpService } from '../services/http.service';
-import { ProductsList } from './products.model';
 
 @Component({
   selector: 'app-ecom-cat',
@@ -8,7 +7,7 @@ import { ProductsList } from './products.model';
   styleUrls: ['./ecom-cat.component.scss'],
 })
 export class EcomCatComponent implements OnInit {
-  productLists: any;
+  productLists: any = [];
   skeletonLoadArr: number[] = [...Array(12).keys()];
   @ViewChild('tiles', {
     static: true
@@ -16,14 +15,21 @@ export class EcomCatComponent implements OnInit {
   viewTypeIcon!: HTMLElement;
   constructor(private shopService: HttpService) {}
 
+  /**
+   * on init
+   */
   ngOnInit(): void {
     this.viewTypeIcon = this.myTile?.nativeElement;
     this.shopService.getShopingList().subscribe((shoppingData) => {
-      this.productLists = shoppingData
+        this.productLists = shoppingData
     });
   }
 
-  toggleView(view: any):void{
+  /**
+   * Toggles grid view layout
+   * @param view
+   */
+  toggleView(view: string):void{
     if(view === "grid"){
       this.viewTypeIcon.style.gridTemplateColumns = 'repeat(4, 1fr)';
     } else{
